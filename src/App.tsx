@@ -1,9 +1,12 @@
+
+import './index.css'
+
 import { useMemo, useState } from "react"
 import { getTheme, MyThemes } from "./AppThemes"
 import { Stack, ThemeProvider } from "@mui/material"
-import Section from "./components/Section"
-import './index.css' 
+import Section from "./components/Section" 
 import Introduction from "./components/Introduction"
+import ConfigBar from './components/configBar'
 
 function App() {
 
@@ -13,6 +16,7 @@ function App() {
   
   return (
     <ThemeProvider theme={muiTheme}>
+      <ConfigBar/>
       <Stack display={'flex'} flexGrow={1} gap={2} maxHeight={'100vh'} width={'100%'}  sx={{
         backgroundColor: muiTheme.palette.background.default,
         overflowX:'hidden',

@@ -1,11 +1,13 @@
 import { Stack, Typography, useTheme } from '@mui/material'
 import AvatarImage from './AvatarImage'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 
 const Introduction = () => {
 
     const theme = useTheme()
-    console.log(t('introduction.greeting'))
+
+    const {t} = useTranslation()
+
   return (
     <>
         <Stack display={'flex'} sx={{
