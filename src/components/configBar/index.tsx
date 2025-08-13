@@ -1,5 +1,5 @@
 import { ColorLens, Language } from '@mui/icons-material'
-import { Box, IconButton, List, ListItemButton, Popover, Stack } from '@mui/material'
+import { Box, IconButton, List, ListItemButton, Popover, Stack, useTheme } from '@mui/material'
 import { Dispatch, SetStateAction, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { MyThemes, themeList } from '../../AppThemes'
@@ -18,6 +18,8 @@ const ConfigBar = ({setTheme}:Props) => {
 
     const languageAnchorRef = useRef(null)
     const themeAnchorRef = useRef(null)
+
+    const theme = useTheme()
 
   return (
     <>
@@ -65,11 +67,11 @@ const ConfigBar = ({setTheme}:Props) => {
         </List>
     </Popover>
     <Stack gap={2} position={'absolute'} top={'30px'} left={'30px'}>
-        <IconButton ref={languageAnchorRef} sx={{backgroundColor:'white'}} onClick={()=>setIsLanguagePopoverOpen(true)}>
+        <IconButton ref={languageAnchorRef} sx={{backgroundColor:theme.palette.secondary.main}} onClick={()=>setIsLanguagePopoverOpen(true)}>
             <Language/>
         </IconButton>
 
-        <IconButton ref={themeAnchorRef} sx={{backgroundColor:'white'}} onClick={()=>setIsThemePopoverOpen(true)}>
+        <IconButton ref={themeAnchorRef} sx={{backgroundColor:theme.palette.secondary.main}} onClick={()=>setIsThemePopoverOpen(true)}>
             <ColorLens/>
         </IconButton>
     </Stack>
