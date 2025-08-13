@@ -1,6 +1,7 @@
 import { Stack, Typography, useTheme } from '@mui/material'
 import AvatarImage from './AvatarImage'
 import { useTranslation } from 'react-i18next'
+import TypeWritter from './TypeWritter'
 
 const Introduction = () => {
 
@@ -28,7 +29,14 @@ const Introduction = () => {
             <Typography variant='h4'>
                 {t('introduction.greeting')}
             </Typography>
-
+            <Typography variant='h1'>
+                {'Manuel de los Santos'}
+            </Typography>
+            <TypeWritter texts={[
+                t('Programmer'),
+                t('Frontend'),
+                t('Backend')
+            ]} />
             </Stack>
         </Stack>
     </>

@@ -49,8 +49,6 @@ const AvatarImage = () => {
                 backgroundImage:'url(/sailoe.png)',
                 backgroundSize:'cover',
                 backgroundPosition:'center',
-                clipPath: 'circle(0% at 50% 50%)',
-                willChange: 'clip-path',
                 animation: `${openIrisAnimation} 1000ms ease-out 150ms forwards`,
             }}/>
         </Box>
