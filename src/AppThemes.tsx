@@ -1,7 +1,21 @@
 
 import { createTheme } from '@mui/material/styles';
 
-export type MyThemes = 'basic' | 'light' 
+export enum MyThemes {
+  BASIC='basic',
+  SAND='sand'
+}
+
+export const themeList = [
+  {
+    name: MyThemes.SAND,
+    color: "linear-gradient(to right, #ffe0ab, #f3ce93, #eeb646, #ffe0ab, #dab984)"
+  },
+  {
+    name: MyThemes.BASIC,
+    color: 'linear-gradient(to right,#00CECE,#00A8A8,#304047)'
+  }
+]
 
 const basicTheme = createTheme({
   palette: {
@@ -18,12 +32,27 @@ const basicTheme = createTheme({
   },
 });
 
+const sandTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffe0ab',
+      dark: '#f3ce93'
+    },
+    secondary: {
+      main: '#eeb646',
+    },
+    background: {
+        default: ' 	#dab984',
+    }
+  },
+})
+
 export const getTheme = (theme: MyThemes)=>{
     switch (theme) {
-        case 'light':
-            return basicTheme
+        case MyThemes.SAND:
+            return sandTheme
         
-        case 'basic':
+        case MyThemes.BASIC:
             return basicTheme
     
         default:

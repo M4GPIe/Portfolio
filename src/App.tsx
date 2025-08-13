@@ -10,13 +10,13 @@ import ConfigBar from './components/configBar'
 
 function App() {
 
-  const [theme, setTheme] = useState<MyThemes>('basic')
+  const [theme, setTheme] = useState<MyThemes>(MyThemes.BASIC)
 
   const muiTheme = useMemo(()=>getTheme(theme),[theme])
   
   return (
     <ThemeProvider theme={muiTheme}>
-      <ConfigBar/>
+      <ConfigBar setTheme={setTheme}/>
       <Stack display={'flex'} flexGrow={1} gap={2} maxHeight={'100vh'} width={'100%'}  sx={{
         backgroundColor: muiTheme.palette.background.default,
         overflowX:'hidden',
