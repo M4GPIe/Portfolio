@@ -1,34 +1,89 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useMemo, useState } from "react"
+import { getTheme, MyThemes } from "./AppThemes"
+import { Stack, ThemeProvider } from "@mui/material"
+import Section from "./components/Section"
+import './index.css' 
+import Introduction from "./components/Introduction"
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const [theme, setTheme] = useState<MyThemes>('basic')
+
+  const muiTheme = useMemo(()=>getTheme(theme),[theme])
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ThemeProvider theme={muiTheme}>
+      <Stack display={'flex'} flexGrow={1} gap={2} maxHeight={'100vh'} width={'100%'}  sx={{
+        backgroundColor: muiTheme.palette.background.default,
+        overflowX:'hidden',
+        ":-webkit-scrollbar":{
+          display:'none'
+        },
+        '-ms-overflow-style': 'none', 
+        'scrollbar-width': 'none'
+      }}>
+        {/* <Introduction/> */}
+        <Section>
+          <Introduction/>
+        </Section>
+
+        {/* <Studies/> */}
+        <Section>
+          <Stack sx={{
+            backgroundColor: muiTheme.palette.primary.main,
+            borderRadius: 15,
+            height: '90vh',
+            width: '90vw'
+          }}>
+          </Stack>
+        </Section>
+
+        {/* <Working Experience/> */}
+        <Section>
+          <Stack sx={{
+            backgroundColor: muiTheme.palette.primary.main,
+            borderRadius: 15,
+            height: '90vh',
+            width: '90vw'
+          }}>
+          </Stack>
+        </Section>
+
+        {/* <Job expectations /> */}
+        <Section>
+          <Stack sx={{
+            backgroundColor: muiTheme.palette.primary.main,
+            borderRadius: 15,
+            height: '90vh',
+            width: '90vw'
+          }}>
+          </Stack>
+        </Section>
+
+        {/* <About myself/> */}
+        <Section>
+          <Stack sx={{
+            backgroundColor: muiTheme.palette.primary.main,
+            borderRadius: 15,
+            height: '90vh',
+            width: '90vw'
+          }}>
+          </Stack>
+        </Section>
+
+        {/* <Other projects/> */}
+        <Section>
+          <Stack sx={{
+            backgroundColor: muiTheme.palette.primary.main,
+            borderRadius: 15,
+            height: '90vh',
+            width: '90vw'
+          }}>
+          </Stack>
+        </Section>
+        
+      </Stack>
+    </ThemeProvider>
   )
 }
 
