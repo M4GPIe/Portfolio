@@ -6,17 +6,6 @@ export enum MyThemes {
   SAND='sand'
 }
 
-export const themeList = [
-  {
-    name: MyThemes.SAND,
-    color: "linear-gradient(to right, #ffe0ab, #f3ce93, #eeb646, #ffe0ab, #dab984)"
-  },
-  {
-    name: MyThemes.BASIC,
-    color: 'linear-gradient(to right,#00CECE,#00A8A8,#304047)'
-  }
-]
-
 const basicTheme = createTheme({
   palette: {
     primary: {
@@ -46,6 +35,17 @@ const sandTheme = createTheme({
     }
   },
 })
+
+export const themeList = [
+  {
+    name: MyThemes.SAND,
+    color: sandTheme.palette.primary.main
+  },
+  {
+    name: MyThemes.BASIC,
+    color: basicTheme.palette.primary.main
+  }
+]
 
 export const getTheme = (theme: MyThemes)=>{
     switch (theme) {

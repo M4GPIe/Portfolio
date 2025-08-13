@@ -36,7 +36,7 @@ const ConfigBar = ({setTheme}:Props) => {
         <List>
             {(i18n.options.supportedLngs as string[])?.filter(lang=>lang!=='cimode')?.map((lang)=>(
                 <ListItemButton key={lang} onClick={()=>i18n.changeLanguage(lang)}>
-                    {lang}
+                    {t(lang)}
                 </ListItemButton>
             ))}
         </List>
@@ -56,8 +56,10 @@ const ConfigBar = ({setTheme}:Props) => {
         <List>
             {themeList.map(({name, color})=>(
                 <ListItemButton key={name} onClick={()=>setTheme(name)}>
-                    {t(name)}
-                    <Box width={'20px'} height={'20px'} sx={{backgroundColor: color}}/>
+                    <Stack display={'flex'} direction={'row'} width={'100px'} justifyContent={'space-between'}>
+                        {t(name)}
+                        <Box width={'20px'} height={'20px'} sx={{backgroundColor: color}} borderRadius={'50%'}/>
+                    </Stack>
                 </ListItemButton>
             ))}
         </List>
