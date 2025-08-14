@@ -17,14 +17,15 @@ function App() {
   return (
     <ThemeProvider theme={muiTheme}>
       <ConfigBar setTheme={setTheme}/>
-      <Stack display={'flex'} flexGrow={1} gap={2} maxHeight={'100vh'} width={'100%'}  sx={{
+      <Stack display={'flex'} maxHeight={'100vh'} width={'100%'}  sx={{
         backgroundColor: muiTheme.palette.background.default,
         overflowX:'hidden',
         ":-webkit-scrollbar":{
           display:'none'
         },
         '-ms-overflow-style': 'none', 
-        'scrollbar-width': 'none'
+        'scrollbar-width': 'none',
+        
       }}>
         {/* <Introduction/> */}
         <Section>

@@ -33,7 +33,7 @@ const AvatarImage = () => {
             transparent 90deg 360deg
             )`,
             borderRadius:'50%',
-            animation: `${circularMotion} 1000ms ease-out 150ms forwards`,
+            animation: `${circularMotion} 1000ms ease-in 150ms forwards`,
         }}/>
         {/* Iris */}
         <Box display={'flex'} width={'410px'} height={'410px'} sx={{
@@ -49,7 +49,7 @@ const AvatarImage = () => {
                 backgroundImage:'url(/sailoe.png)',
                 backgroundSize:'cover',
                 backgroundPosition:'center',
-                animation: `${openIrisAnimation} 1000ms ease-out 150ms forwards`,
+                animation: `${openIrisAnimation} 1000ms ease-in 150ms forwards`,
             }}/>
         </Box>
     </Box>

@@ -1,4 +1,4 @@
-import { Box, keyframes, Typography } from '@mui/material'
+import { Box, keyframes, Typography, useTheme } from '@mui/material'
 import  { useEffect, useState } from 'react'
 
 interface Props {
@@ -8,16 +8,13 @@ interface Props {
     deletingSpeed?: number
 }
 
-const blinkAnimation = keyframes`
-    from, to { border-color: transparent; }
-    50% { border-color: inherit; }
-`
-
 const TypeWritter = ({texts, typingSpeed = 150, pauseTime = 1000, deletingSpeed = 100}:Props) => {
 
     const [index, setIndex] = useState(0)
     const [displayedText, setDisplayedText] = useState('')
     const [isDeleting, setIsDeleting] = useState(false)
+
+    const theme = useTheme()
 
     useEffect(()=>{
 
@@ -35,12 +32,25 @@ const TypeWritter = ({texts, typingSpeed = 150, pauseTime = 1000, deletingSpeed 
                 setIndex((index+1)%texts.length)
             })
         }
-
         
     },[texts, typingSpeed, pauseTime, deletingSpeed,index,displayedText,isDeleting])
 
+    const blinkAnimation = keyframes`
+        from, to { border-color: transparent; }
+        50% { border-color: inherit; }
+    `
+
+    const appearAnimation = keyframes`
+        0% { color: transparent; }
+        75% { color: transparent; }
+        100% { color: ${theme.palette.text.primary}}
+    `
+
   return (
-    <Typography variant='h5' sx={{fontFamily:'monospace'}}>
+    <Typography variant='h5' sx={{
+        fontFamily:'monospace',
+        animation: `${appearAnimation} 1.15s`
+    }}>
         {displayedText}
         <Box component={'span'} sx={{
             borderRight: '2px solid',
