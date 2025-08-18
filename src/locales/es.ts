@@ -18,6 +18,7 @@ const esJSON = {
     studies: {
         ib: {
             title: 'Bachillerato Internacional + Bachillerato Español',
+            academy: 'IES Son Pacs, Mallorca',
             timeSpan: 'sept. 2019 - jun. 2021',
             body: 'El BI es un programa con amplio reconocimiento internacional enfocado a potenciar la internacionalidad en la educación. En mi caso lo cursé a la vez que el bachillerato regular de España, superando dos bachilleratos a la vez. En él desarrollé competencias en Física, Química y Matemáticas así como en la investigación y redacción de artículos científicos. Mi monografía (el trabajo final del bachillerato) estaba enfocada al análisis estadístico. En concreto trata de las emisiones de carbono de la Unión Europea y su ajuste a los objetivos propuestos por el protocolo de Kyoto.'
         }

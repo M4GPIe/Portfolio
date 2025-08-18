@@ -4,7 +4,7 @@ import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 
-const step = 250
+const step = 500
 
 const Studies = () => {
 
@@ -72,6 +72,10 @@ const Studies = () => {
         <Stack ref={scrollContainerRef} component={'div'} gap={4} sx={{
             overflowY: 'hidden',
         }}>
+            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
+            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
+            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
+            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
             <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
             <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
             <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>

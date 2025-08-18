@@ -34,6 +34,9 @@ const StudyCard = ({translationName, imageUrl}:Props) => {
                 {t(`studies.${translationName}.title`)}
             </Typography>
             <Typography fontSize={'18px'} variant='body2' color='#454545'>
+                {t(`studies.${translationName}.academy`)}
+            </Typography>
+            <Typography fontSize={'16px'} variant='body2' color='#555555'>
                 {t(`studies.${translationName}.timeSpan`)}
             </Typography>
             <Typography align='justify' display={'flex'} mt={1}>
