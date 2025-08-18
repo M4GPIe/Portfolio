@@ -7,6 +7,7 @@ import { Stack, ThemeProvider } from "@mui/material"
 import Section from "./components/Section" 
 import Introduction from "./components/Introduction"
 import ConfigBar from './components/configBar'
+import Studies from './components/Studies'
 
 function App() {
 
@@ -34,13 +35,7 @@ function App() {
 
         {/* <Studies/> */}
         <Section>
-          <Stack sx={{
-            backgroundColor: muiTheme.palette.primary.main,
-            borderRadius: 15,
-            height: '90vh',
-            width: '90vw'
-          }}>
-          </Stack>
+          <Studies/>
         </Section>
 
         {/* <Working Experience/> */}
