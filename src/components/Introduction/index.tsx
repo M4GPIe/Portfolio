@@ -36,7 +36,7 @@ const Introduction = () => {
                 {t('introduction.greeting')}
             </Typography>
             <Typography variant='h1' sx={{
-                animation: `${slideIn} 1.15s`,
+                animation: `${slideIn} 1000ms ease-in 150ms forwards`,
                 fontFamily: 'serif'
             }}>
                 {'Manuel de los Santos'}

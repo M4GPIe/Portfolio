@@ -49,7 +49,7 @@ const TypeWritter = ({texts, typingSpeed = 150, pauseTime = 1000, deletingSpeed 
   return (
     <Typography variant='h5' sx={{
         fontFamily:'monospace',
-        animation: `${appearAnimation} 1.15s`
+        animation: `${appearAnimation} 1.35s`
     }}>
         {displayedText}
         <Box component={'span'} sx={{
