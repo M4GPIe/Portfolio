@@ -73,14 +73,8 @@ const Studies = () => {
             overflowY: 'hidden',
         }}>
             <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
-            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
-            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
-            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
-            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
-            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
-            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
-            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
-            <StudyCard translationName='ib' imageUrl='/ib_logo.png'/>
+            <StudyCard translationName='computerScience' imageUrl='/UPV-Emblem.png'/>
+            <StudyCard translationName='helsinkiFullStack' imageUrl='/helsinki.png'/>
         </Stack>
        { needsScroll && (
             <Stack display={'flex'} justifyContent={'space-between'} >
