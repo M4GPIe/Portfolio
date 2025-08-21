@@ -20,17 +20,23 @@ const TypeWritter = ({texts, typingSpeed = 150, pauseTime = 1000, deletingSpeed 
 
         const text = texts[index]
 
+        let timeout
+
         if(!isDeleting && displayedText !== text){
-            setTimeout(()=>setDisplayedText(text.slice(0,displayedText.length+1)),typingSpeed)
+            timeout = setTimeout(()=>setDisplayedText(text.slice(0,displayedText.length+1)),typingSpeed)
         }else if(!isDeleting && displayedText === text){
-            setTimeout(()=>setIsDeleting(true),pauseTime)
+            timeout = setTimeout(()=>setIsDeleting(true),pauseTime)
         }else if(isDeleting && displayedText.length>0){
-            setTimeout(()=>{setDisplayedText(text.slice(0,displayedText.length-1))})
+            timeout = setTimeout(()=>{setDisplayedText(text.slice(0,displayedText.length-1))})
         }else{
-            setTimeout(()=>{
+            timeout = setTimeout(()=>{
                 setIsDeleting(false)
                 setIndex((index+1)%texts.length)
             })
+        }
+
+        return ()=>{
+            clearTimeout(timeout)
         }
         
     },[texts, typingSpeed, pauseTime, deletingSpeed,index,displayedText,isDeleting])
